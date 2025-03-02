@@ -23,7 +23,7 @@ export class Todo {
   @UpdateDateColumn()
   updatedAt: Date; // 自動記錄更新時間
 
-  constructor(todo: Pick<Todo, "event" | "status">) {
+  constructor(todo: any) {
     Object.assign(this, todo);
   }
 }

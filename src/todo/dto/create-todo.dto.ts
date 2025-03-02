@@ -11,5 +11,5 @@ export class CreateTodoDto {
   @IsNotEmpty()
   event: string;
 
-  status: Status = Status.PENDING;
+  // status: Status = Status.PENDING;
 }
