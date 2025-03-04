@@ -15,12 +15,9 @@ export class TodoService {
 
   async create(createTodoDto: CreateTodoDto) {
     const request = new Todo(createTodoDto);
-    try {
-      await this.entityManager.save(request);
-      return 'New Schedule was added to your list';
-    } catch (error) {
-      return 'New Schedule was added error';
-    }
+
+    await this.entityManager.save(request);
+    return 'New Schedule was added to your list';
   }
 
   async findAll() {
@@ -47,11 +44,7 @@ export class TodoService {
   }
 
   async remove(id: number) {
-    try {
-      await this.todoRepository.delete(id);
-      return 'Delete Success';
-    } catch (error) {
-      return 'Delete Fail';
-    }
+    await this.todoRepository.delete(id);
+    return 'Delete Success';
   }
 }
