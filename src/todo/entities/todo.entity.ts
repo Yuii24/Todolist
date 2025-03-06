@@ -1,3 +1,4 @@
+import { Factory } from "nestjs-seeder";
 import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
 
 enum Status {
@@ -11,9 +12,15 @@ export class Todo {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Factory(() => {
+    return 'Learing Nest.js'
+  })
   @Column()
   event: string;
 
+  @Factory(() => {
+    return Status.PENDING;
+  })
   @Column({ type: "enum", enum: Status, default: Status.PENDING })
   status: Status;
 
