@@ -34,5 +34,5 @@ COPY --from=builder /app/dist ./dist
 EXPOSE 3000
 
 # 啟動應用
-CMD ["node", "dist/main.js"]
+CMD ["node", "dist/src/main.js"]
 
