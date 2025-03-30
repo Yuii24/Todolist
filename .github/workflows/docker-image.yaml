@@ -17,4 +17,5 @@ jobs:
       run: docker build -t iian24/todolist:latest -f docker/Dockerfile .
     - name: push image to docker hub
       run: |
+        docker login -u iian24 -p ${{ secrets.DOCKER_HUB_TOKEN }}
         docker push iian24/todolist:latest
